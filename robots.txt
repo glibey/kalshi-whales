@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://glibey.github.io/kalshi-whales/sitemap.xml

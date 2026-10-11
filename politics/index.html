@@ -13,7 +13,7 @@
 @media (prefers-color-scheme:light){:root{--bg:#f5f7fb;--bg2:#eef2f8;--card:#fff;--card2:#f3f6fa;--ink:#0b1424;--mut:#5d6b80;--line:#e3e8f0;
 --acc:#0a9c76;--acc2:#1872d6;--yes:#0a9c62;--no:#d64545;--pend:#7a879a;--glow:rgba(10,156,118,.12);--shadow:0 1px 2px rgba(16,24,40,.05),0 8px 24px rgba(16,24,40,.06)}}
 *{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-feature-settings:"cv11","ss01";-webkit-font-smoothing:antialiased}
+body{margin:0;overflow-x:hidden;background:var(--bg);color:var(--ink);font:15px/1.55 Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;font-feature-settings:"cv11","ss01";-webkit-font-smoothing:antialiased}
 a{color:var(--acc2);text-decoration:none}a:hover{opacity:.85}
 .wrap{max-width:1040px;margin:0 auto;padding:0 16px}
 .bar{position:sticky;top:0;z-index:5;backdrop-filter:saturate(160%) blur(14px);-webkit-backdrop-filter:saturate(160%) blur(14px);background:color-mix(in srgb,var(--bg) 72%,transparent);border-bottom:1px solid var(--line)}
@@ -22,8 +22,8 @@ a{color:var(--acc2);text-decoration:none}a:hover{opacity:.85}
 .btn{display:inline-flex;align-items:center;gap:8px;background:var(--acc);color:#04140f;font-weight:700;padding:10px 16px;border-radius:12px;font-size:14px;box-shadow:0 6px 20px var(--glow);transition:transform .15s}
 .btn:hover{transform:translateY(-1px);opacity:1}.btn.ghost{background:var(--card2);color:var(--ink);box-shadow:none;border:1px solid var(--line)}
 .btn.sm{padding:8px 13px;font-size:13px}
-.hero{position:relative;padding:54px 0 26px;overflow:hidden}
-.hero:before{content:"";position:absolute;inset:-40% -10% auto;height:520px;background:radial-gradient(600px 260px at 20% 30%,var(--glow),transparent 70%),radial-gradient(500px 240px at 85% 10%,rgba(90,180,255,.14),transparent 70%);pointer-events:none}
+.hero{position:relative;padding:54px 0 26px}
+.hero:before{content:"";position:absolute;top:-120px;left:-30vw;right:-30vw;height:560px;background:radial-gradient(600px 260px at 20% 30%,var(--glow),transparent 70%),radial-gradient(500px 240px at 85% 10%,rgba(90,180,255,.14),transparent 70%);pointer-events:none}
 .hero>*{position:relative}
 .live{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--acc);background:var(--card2);border:1px solid var(--line);padding:6px 11px;border-radius:999px}
 .dot{width:8px;height:8px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 0 var(--acc);animation:p 2s infinite}
@@ -33,7 +33,7 @@ h1 span{background:linear-gradient(90deg,var(--acc),var(--acc2));-webkit-backgro
 .lead{color:var(--mut);font-size:17px;max-width:640px;margin:0 0 22px}
 .ctas{display:flex;flex-wrap:wrap;gap:10px}
 .upd{color:var(--mut);font-size:13px;margin-top:16px}
-nav.chips{display:flex;gap:8px;overflow-x:auto;padding:4px 0 14px;scrollbar-width:none}nav.chips::-webkit-scrollbar{display:none}
+nav.chips{display:flex;flex-wrap:wrap;gap:8px;padding:4px 0 16px}nav.chips::-webkit-scrollbar{display:none}
 nav.chips a{flex:0 0 auto;padding:7px 14px;border:1px solid var(--line);border-radius:999px;color:var(--mut);background:var(--card);font-size:13px;font-weight:500}
 nav.chips a.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
 h2{font-size:20px;letter-spacing:-.02em;margin:34px 0 14px;display:flex;align-items:center;gap:10px}
@@ -65,7 +65,7 @@ details p{color:var(--mut);margin:10px 0 0}
 footer{color:var(--mut);font-size:13px;padding:34px 0 90px;border-top:1px solid var(--line);margin-top:40px}
 #kwcb{position:fixed;left:12px;right:12px;bottom:12px;max-width:560px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;background:var(--bg2);color:var(--ink);border:1px solid var(--line);border-radius:14px;padding:12px 14px;box-shadow:0 12px 40px rgba(0,0,0,.35);font-size:14px;z-index:9}
 #kwcb button{font:inherit;margin-left:8px;padding:7px 14px;border-radius:10px;border:1px solid var(--line);background:transparent;color:var(--ink);cursor:pointer}#kwcb button.y{background:var(--acc);border-color:var(--acc);color:#04140f;font-weight:700}
-@media (max-width:600px){.t{grid-template-columns:36px 1fr auto;gap:10px;padding:11px 12px}.t .em{width:36px;height:36px;font-size:18px}.t .amt{font-size:16px}.hide-s{display:none}.hero{padding-top:34px}.bar .btn span{display:none}}
+@media (max-width:600px){nav.chips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-right:-16px;padding-right:16px;-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent)}.t{grid-template-columns:36px 1fr auto;gap:10px;padding:11px 12px}.t .em{width:36px;height:36px;font-size:18px}.t .amt{font-size:16px}.hide-s{display:none}.hero{padding-top:34px}.bar .btn span{display:none}}
 </style><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
 var kwc=null;try{kwc=localStorage.getItem('kw_consent');}catch(e){}
 gtag('consent','default',{analytics_storage:kwc==='yes'?'granted':'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied'});
@@ -79,7 +79,7 @@ document.body.appendChild(b);});</script>
 <div class="bar"><div class="wrap"><a class="logo" href="../"><img src="../icon.png" alt="">Kalshi Whale Alerts</a>
 <a class="btn sm" href="https://t.me/KalshiWhaleAlerts">✈️ <span>Get alerts</span></a></div></div>
 <div class="wrap">
-<section class="hero"><span class="live"><span class="dot"></span>Live · updated Oct 11, 14:31 UTC</span>
+<section class="hero"><span class="live"><span class="dot"></span>Live · updated Oct 11, 14:36 UTC</span>
 <h1>Kalshi <span>Politics &amp; Elections</span> whale tracker</h1><p class="lead">Every Politics &amp; Elections trade of $10k+ on Kalshi, live from the public trade feed — with win/loss results once markets settle.</p>
 <div class="ctas"><a class="btn" href="https://t.me/KalshiWhaleAlerts">🐋 Join the Telegram channel</a><a class="btn ghost" href="https://t.me/KalshiWhaleAlerts_bot">Custom alerts bot →</a></div></section>
 <nav class="chips"><a href="../" class="">All markets</a><a href="../nfl/" class="">NFL</a><a href="../college-football/" class="">CFB</a><a href="../nba/" class="">NBA</a><a href="../mlb/" class="">MLB</a><a href="../nhl/" class="">NHL</a><a href="../soccer/" class="">Soccer</a><a href="../tennis/" class="">Tennis</a><a href="../ufc/" class="">UFC</a><a href="../golf/" class="">Golf</a><a href="../politics/" class="on">Politics</a><a href="../economics/" class="">Economics</a><a href="../crypto/" class="">Crypto</a><a href="../mentions/" class="">Mentions</a></nav>
